@@ -1,0 +1,1 @@
+window.JF_VARIANTS = {};
