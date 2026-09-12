@@ -24,3 +24,41 @@ $$('.nav-link').forEach(b=>b.onclick=()=>setCategory(b.dataset.category));$('[da
 $('#checkoutBtn').onclick=()=>{if(!cart.length)return alert('Sua sacola está vazia.');renderCheckout();closeDrawers();openDrawer($('#checkoutDrawer'))};$('#stripePay').onclick=()=>showPayment('stripe');$('#zellePay').onclick=()=>showPayment('zelle');$('#venmoPay').onclick=()=>showPayment('venmo');
 updateBadges();render();
 })();
+
+(()=> {
+  const slider=document.getElementById('heroSlider');
+  if(!slider)return;
+  const slides=[...slider.querySelectorAll('.hero-slide')];
+  const dots=[...slider.querySelectorAll('.hero-dot')];
+  const prev=slider.querySelector('.hero-prev');
+  const next=slider.querySelector('.hero-next');
+  let index=0,timer=null,startX=0;
+  const show=(n)=>{
+    index=(n+slides.length)%slides.length;
+    slides.forEach((s,i)=>{
+      const on=i===index;
+      s.classList.toggle('active',on);
+      s.setAttribute('aria-hidden',on?'false':'true');
+      s.tabIndex=on?0:-1;
+    });
+    dots.forEach((d,i)=>d.classList.toggle('active',i===index));
+  };
+  const stop=()=>{if(timer){clearInterval(timer);timer=null}};
+  const start=()=>{stop();timer=setInterval(()=>show(index+1),5000)};
+  prev?.addEventListener('click',e=>{e.stopPropagation();show(index-1);start()});
+  next?.addEventListener('click',e=>{e.stopPropagation();show(index+1);start()});
+  dots.forEach((d,i)=>d.addEventListener('click',e=>{e.stopPropagation();show(i);start()}));
+  slides.forEach(s=>s.addEventListener('click',()=>{
+    const cat=s.dataset.bannerCategory;
+    const target=document.querySelector('.nav-link[data-category="'+cat+'"]');
+    if(target){target.click();setTimeout(()=>document.querySelector('.catalog')?.scrollIntoView({behavior:'smooth',block:'start'}),120)}
+  }));
+  slider.addEventListener('mouseenter',stop);
+  slider.addEventListener('mouseleave',start);
+  slider.addEventListener('focusin',stop);
+  slider.addEventListener('focusout',start);
+  slider.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;stop()},{passive:true});
+  slider.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)show(index+(dx<0?1:-1));start()},{passive:true});
+  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+  show(0);start();
+})();
