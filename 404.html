@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="JESUSFIRST — moda cristã em dólar nos Estados Unidos.">
+<title>JESUSFIRST</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="announcement">ENTREGA EM QUALQUER LUGAR DOS ESTADOS UNIDOS · SEM PEDIDO MÍNIMO · PREÇOS EM USD</div>
+<header class="site-header">
+  <div class="header-main container">
+    <button class="mobile-menu" id="mobileMenuBtn" aria-label="Abrir menu">☰</button>
+    <a class="brand" href="#" data-route="lancamentos">JESUSFIRST</a>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Digite o que você procura" autocomplete="off">
+      <button type="submit" aria-label="Buscar">⌕</button>
+    </form>
+    <div class="header-actions">
+      <button id="searchMobileBtn" class="icon-button mobile-search" aria-label="Buscar">⌕</button>
+      <button id="favoritesBtn" class="icon-button" aria-label="Favoritos">♡<span id="favBadge" class="badge">0</span></button>
+      <button id="cartBtn" class="cart-button" aria-label="Carrinho">Sacola <span id="cartBadge">0</span></button>
+    </div>
+  </div>
+  <nav class="main-nav" id="mainNav">
+    <div class="container nav-inner">
+      <button class="nav-link active" data-category="lancamentos">LANÇAMENTOS</button>
+      <button class="nav-link" data-category="feminino">FEMININO</button>
+      <button class="nav-link" data-category="oversized">OVERSIZED</button>
+      <button class="nav-link" data-category="masculino">MASCULINO</button>
+      <button class="nav-link" data-category="infantil">INFANTIL</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="breadcrumb container"><span>Início</span><span>›</span><strong id="crumbCurrent">Lançamentos</strong></section>
+  <section class="catalog container">
+    <div class="catalog-head">
+      <div>
+        <p class="kicker">JESUSFIRST</p>
+        <h1 id="pageTitle">Lançamentos</h1>
+      </div>
+      <div class="catalog-tools">
+        <span id="productCount"></span>
+        <select id="sortSelect" aria-label="Ordenar">
+          <option value="featured">Destaques</option>
+          <option value="az">Nome A–Z</option>
+          <option value="low">Menor preço</option>
+          <option value="high">Maior preço</option>
+        </select>
+      </div>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+    <div id="emptyState" class="empty-state" hidden>Nenhum produto encontrado.</div>
+  </section>
+</main>
+
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+<aside class="drawer" id="productDrawer" aria-hidden="true">
+  <button class="drawer-close" data-close>×</button>
+  <div id="productDetail"></div>
+</aside>
+
+<aside class="drawer drawer-small" id="cartDrawer" aria-hidden="true">
+  <button class="drawer-close" data-close>×</button>
+  <h2>Sua sacola</h2>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+  <button class="primary full" id="checkoutBtn">FINALIZAR COMPRA</button>
+  <p class="checkout-note">Você poderá escolher Stripe, Zelle ou Venmo.</p>
+</aside>
+
+<aside class="drawer drawer-small" id="checkoutDrawer" aria-hidden="true">
+  <button class="drawer-close" data-close>×</button>
+  <p class="kicker">JESUSFIRST</p>
+  <h2>Finalizar compra</h2>
+  <div class="checkout-summary" id="checkoutSummary"></div>
+  <div class="payment-options">
+    <button class="payment-card" id="stripePay"><strong>Cartão / Stripe</strong><span>Checkout seguro online</span></button>
+    <button class="payment-card" id="zellePay"><strong>Zelle</strong><span>978 310-9700</span></button>
+    <button class="payment-card" id="venmoPay"><strong>Venmo</strong><span>@blckboston</span></button>
+  </div>
+  <div id="paymentInstructions" class="payment-instructions" hidden></div>
+</aside>
+
+<aside class="drawer drawer-small" id="favoritesDrawer" aria-hidden="true">
+  <button class="drawer-close" data-close>×</button>
+  <h2>Favoritos</h2>
+  <div id="favoriteItems"></div>
+</aside>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><div class="brand footer-brand">JESUSFIRST</div><p>Moda cristã com propósito.</p></div>
+    <div><strong>Categorias</strong><p>Lançamentos<br>Feminino<br>Oversized<br>Masculino<br>Infantil</p></div>
+    <div><strong>Atendimento</strong><p>WhatsApp: <a href="https://wa.me/15082154196" target="_blank" rel="noopener">(508) 215-4196</a><br>Entrega em todos os Estados Unidos<br>Sem pedido mínimo<br>Stripe · Zelle · Venmo</p></div>
+  </div>
+  <div class="container copyright">© 2026 JESUSFIRST. Todos os direitos reservados.</div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/15082154196" target="_blank" rel="noopener" aria-label="Falar com a JESUSFIRST no WhatsApp">WhatsApp</a>
+
+<script src="data/products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
