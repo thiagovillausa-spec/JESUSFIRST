@@ -102,3 +102,9 @@ button,input,select{font:inherit}.announcement{background:#111;color:white;text-
   .hero-prev{left:10px}.hero-next{right:10px}
   .hero-dots{bottom:20px}
 }
+
+.language-row{display:flex;gap:10px;margin:8px 0 22px;flex-wrap:wrap}
+.language-btn{min-width:128px;padding:12px 16px;border:1px solid #d7d7d7;background:#fff;color:#222;font-size:12px;font-weight:700;letter-spacing:.04em;cursor:pointer}
+.language-btn.active{background:#111;color:#fff;border-color:#111}
+.language-btn:hover{border-color:#111}
+@media(max-width:620px){.language-btn{flex:1;min-width:0}}
