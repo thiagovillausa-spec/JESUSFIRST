@@ -1,14 +1,12 @@
 window.JF_VARIANTS = {
-  "corajosa-josue-1-9-feminino": { images: ["public/products/corajosa-josue-1-9-feminino/en/01-en.webp"] },
-  "deus-e-amor-flores-feminino": { images: ["public/products/deus-e-amor-flores-feminino/en/01-en.webp"] },
-  "deus-eu-te-vejo-em-tudo-feminino": { images: ["public/products/deus-eu-te-vejo-em-tudo-feminino/en/01-en.webp"] },
-  "eu-escolhi-a-boa-parte-feminino": { images: ["public/products/eu-escolhi-a-boa-parte-feminino/en/01-en.webp"] },
-  "guarda-o-teu-coracao-proverbios-4-23-feminino": { images: ["public/products/guarda-o-teu-coracao-proverbios-4-23-feminino/en/01-en.webp"] },
-  "menina-dos-olhos-de-deus-feminino": { images: ["public/products/menina-dos-olhos-de-deus-feminino/en/01-en.webp"] },
-  "mais-de-ti-e-menos-de-mim-feminino": { images: [
-    "public/products/mais-de-ti-e-menos-de-mim-feminino/en/01-en.webp",
-    "public/products/mais-de-ti-e-menos-de-mim-feminino/en/02-en.webp"
-  ] },
-  "observem-os-lirios-feminino": { images: ["public/products/observem-os-lirios-feminino/en/01-en.webp"] },
-  "ora-espera-confia-feminino": { images: ["public/products/ora-espera-confia-feminino/en/01-en.webp"] }
+  "t-shirt-feminina-corajosa-josue-19-cor-marrom": { images: ["public/products/t-shirt-feminina-corajosa-josue-19-cor-marrom/en/01-en.webp"] },
+  "t-shirt-feminina-deus-e-amor-flores-cor-preto": { images: ["public/products/t-shirt-feminina-deus-e-amor-flores-cor-preto/en/01-en.webp"] },
+  "no00zkei7-t-shirt-feminina-borboleta-fe-acima-do-medo": { images: ["public/products/no00zkei7-t-shirt-feminina-borboleta-fe-acima-do-medo/en/01-en.webp"] },
+  "qet6ub5kx-t-shirt-feminina-flores-escolhida-por-deus-cor-marrom": { images: ["public/products/qet6ub5kx-t-shirt-feminina-flores-escolhida-por-deus-cor-marrom/en/01-en.webp"] },
+  "t-shirt-feminina-guarda-o-teu-coracao-proverbios-423-cor-preto": { images: ["public/products/t-shirt-feminina-guarda-o-teu-coracao-proverbios-423-cor-preto/en/01-en.webp"] },
+  "t-shirt-feminina-menina-dos-olhos-de-deus-cor-rosa-claro": { images: ["public/products/t-shirt-feminina-menina-dos-olhos-de-deus-cor-rosa-claro/en/01-en.webp"] },
+  "t-shirt-feminina-mais-de-ti-e-menos-de-mim-cor-marrom": { images: ["public/products/t-shirt-feminina-mais-de-ti-e-menos-de-mim-cor-marrom/en/01-en.webp"] },
+  "t-shirt-feminina-mais-de-ti-e-menos-de-mim-cor-preto": { images: ["public/products/t-shirt-feminina-mais-de-ti-e-menos-de-mim-cor-preto/en/01-en.webp"] },
+  "t-shirt-feminina-observem-os-lirios-cor-rosa": { images: ["public/products/t-shirt-feminina-observem-os-lirios-cor-rosa/en/01-en.webp"] },
+  "t-shirt-feminina-ora-espera-confia-cor-marfim": { images: ["public/products/t-shirt-feminina-ora-espera-confia-cor-marfim/en/01-en.webp"] }
 };
