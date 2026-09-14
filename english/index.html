@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="JESUSFIRST English Collection — Christian apparel and faith-inspired designs in English.">
+<title>JESUSFIRST — English Collection</title>
+<link rel="stylesheet" href="styles.css?v=20260914-en2">
+</head>
+<body>
+<div class="topbar">FREE SHIPPING ON ORDERS OVER $109.90 · SHIPPING ACROSS THE UNITED STATES</div>
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="./">JESUSFIRST</a>
+    <nav>
+      <a href="#shop">SHOP</a>
+      <a href="../">PORTUGUÊS</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn">BAG <span id="cartCount">0</span></button>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">JESUSFIRST</p>
+      <h1>ENGLISH<br>COLLECTION</h1>
+      <p>Christian apparel and faith-inspired designs with English artwork and wording.</p>
+      <a class="primary" href="#shop">SHOP THE COLLECTION</a>
+    </div>
+    <div class="hero-mark"><span>FAITH</span><strong>FIRST.</strong></div>
+  </section>
+
+  <section class="benefits">
+    <div><strong>ENGLISH DESIGNS</strong><span>Faith-inspired artwork in English</span></div>
+    <div><strong>USD PRICING</strong><span>All prices shown in U.S. dollars</span></div>
+    <div><strong>U.S. SHIPPING</strong><span>Delivery across the United States</span></div>
+    <div><strong>SECURE CHECKOUT</strong><span>Stripe · Zelle · Venmo</span></div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="section-head">
+      <div><p class="eyebrow">JESUSFIRST</p><h2>English Collection</h2><p id="count" class="count"></p></div>
+      <div class="tools">
+        <input id="searchInput" type="search" placeholder="Search products">
+        <select id="sortSelect"><option value="featured">Featured</option><option value="az">Name A–Z</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select>
+      </div>
+    </div>
+    <div id="categoryNav" class="category-nav"></div>
+    <div id="productGrid" class="product-grid"></div>
+    <div id="pagination" class="pagination"></div>
+    <div id="emptyState" class="empty-state" hidden>No products found.</div>
+  </section>
+</main>
+
+<div class="backdrop" id="backdrop" hidden></div>
+<aside class="drawer product-drawer" id="productDrawer" aria-hidden="true"><button class="close" data-close>×</button><div id="productDetail"></div></aside>
+<aside class="drawer small" id="cartDrawer" aria-hidden="true">
+  <button class="close" data-close>×</button><p class="eyebrow">JESUSFIRST</p><h2>Your Bag</h2><div id="cartItems"></div>
+  <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+  <button class="primary full" id="checkoutBtn">SECURE CHECKOUT</button>
+  <p class="note">Shipping is $7.00 or free on orders over $109.90.</p>
+</aside>
+
+<footer>
+  <div class="footer-inner">
+    <div><strong>JESUSFIRST</strong><p>Christian apparel with purpose.</p></div>
+    <div><strong>Collections</strong><p><a href="../">Português</a><br><a href="./">English</a></p></div>
+    <div><strong>Customer Care</strong><p>WhatsApp: (508) 215-4196<br>Shipping across the United States</p></div>
+  </div>
+  <div class="copyright">© 2026 JESUSFIRST. All rights reserved.</div>
+</footer>
+<a class="whatsapp" href="https://wa.me/15082154196" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+<script src="data/products.js?v=20260914-en2"></script>
+<script src="app.js?v=20260914-en2"></script>
+</body></html>
