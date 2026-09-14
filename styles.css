@@ -11,7 +11,7 @@ button,input,select{font:inherit}.announcement{background:#111;color:white;text-
 .payment-options{display:grid;gap:10px;margin-top:22px}.payment-card{display:flex;flex-direction:column;gap:5px;text-align:left;padding:16px;border:1px solid #ddd;background:#fff;cursor:pointer}.payment-card:hover{border-color:#111}.payment-card strong{font-size:13px}.payment-card span{font-size:12px;color:#777}.checkout-summary{background:#f7f7f7;padding:14px;margin-top:16px;font-size:12px;line-height:1.7}.payment-instructions{margin-top:18px;border:1px solid #ddd;padding:16px;font-size:13px;line-height:1.6}.payment-instructions strong{display:block;margin-bottom:6px}.payment-instructions button,.payment-instructions a{display:inline-block;margin-top:12px}.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:70;background:#25D366;color:#fff;text-decoration:none;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 25px rgba(0,0,0,.22);transition:transform .2s ease,box-shadow .2s ease}.whatsapp-float:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 30px rgba(0,0,0,.26)}.whatsapp-float svg{width:30px;height:30px;fill:#fff}.whatsapp-float span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.footer a{color:inherit}
 
 .pagination{display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;margin-top:42px}.page-btn{min-width:38px;height:38px;border:1px solid #ddd;background:#fff;cursor:pointer}.page-btn.active{background:#111;color:#fff;border-color:#111}.page-btn:disabled{opacity:.35;cursor:default}.detail-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:9px}.detail-thumb{border:1px solid #ddd;background:#fff;padding:0;cursor:pointer;aspect-ratio:1/1;overflow:hidden}.detail-thumb.active{border-color:#111}.detail-thumb img{width:100%;height:100%;object-fit:cover}.detail-image img{aspect-ratio:1/1.18;object-fit:cover}
-.shipping-alert{background:#111;color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.08em;padding:10px 12px}.announcement{border-top:1px solid rgba(255,255,255,.08)}
+.shipping-alert{background:#FFD400;color:#000;text-align:center;font-size:12px;font-weight:800;letter-spacing:.08em;padding:11px 12px}.announcement{border-top:1px solid rgba(255,255,255,.08)}
 
 
 .hero-slider{position:relative;width:100%;overflow:hidden;background:#f7e7ec;aspect-ratio:2172/724}
@@ -109,6 +109,6 @@ button,input,select{font:inherit}.announcement{background:#111;color:white;text-
 .language-btn:hover{border-color:#111}
 @media(max-width:620px){.language-btn{flex:1;min-width:0}}
 
-.usa-store-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 13px;border:1px solid #111;background:#111;color:#fff;text-decoration:none;font-size:10px;letter-spacing:.12em;white-space:nowrap}
-.usa-store-link:hover{background:#fff;color:#111}
-@media(max-width:900px){.usa-store-link{min-height:36px;padding:0 8px;font-size:8px;letter-spacing:.08em}}
+.usa-store-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:1px solid #B91C1C;background:#E53935;color:#000;text-decoration:none;font-size:10px;font-weight:800;letter-spacing:.08em;white-space:nowrap}
+.usa-store-link:hover{background:#FF4D47;color:#000;border-color:#8F1111}
+@media(max-width:900px){.usa-store-link{min-height:36px;padding:0 9px;font-size:8px;letter-spacing:.05em}}
