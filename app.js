@@ -43,7 +43,33 @@ function whatsappOrder(method){window.open('https://wa.me/15082154196?text='+enc
 function renderCheckout(){const qty=cart.reduce((s,x)=>s+x.qty,0);const sub=cartSubtotal(),ship=shippingCost();$('#checkoutSummary').innerHTML=`<strong>${qty} item(ns)</strong><br>Subtotal dos produtos: <strong>${money(sub)}</strong><br>Frete: <strong>${ship===0?'GRÁTIS':money(ship)}</strong>${sub<109.90?`<br><small>Faltam ${money(109.90-sub)} para ganhar frete grátis.</small>`:'<br><small>Você ganhou frete grátis.</small>'}<br><br>Total: <strong>${money(sub+ship)}</strong><br>Entrega em qualquer lugar dos Estados Unidos<br>Sem pedido mínimo<br><br><div class="coupon-note"><strong>Tem cupom?</strong><br>O código promocional poderá ser digitado no checkout seguro do Stripe.</div>`;$('#paymentInstructions').hidden=true;$('#paymentInstructions').innerHTML=''}
 function showPayment(type){const box=$('#paymentInstructions');box.hidden=false;if(type==='stripe')box.innerHTML='<strong>Cartão / Stripe</strong>O pagamento será feito no checkout seguro do Stripe. O cliente poderá inserir um <b>código promocional/cupom</b> antes de pagar. O total incluirá o frete de $7 quando aplicável e frete grátis acima de $109,90.';if(type==='zelle')box.innerHTML='<strong>Pagar com Zelle</strong>Envie o pagamento para <b>978 310-9700</b>. Depois, envie o pedido e o comprovante pelo WhatsApp.<br><button class="primary" id="sendWhatsZelle">ENVIAR PEDIDO NO WHATSAPP</button>';if(type==='venmo')box.innerHTML='<strong>Pagar com Venmo</strong>Envie para <b>@blckboston</b>. Depois, envie o pedido e o comprovante pelo WhatsApp.<br><button class="primary" id="sendWhatsVenmo">ENVIAR PEDIDO NO WHATSAPP</button>';const z=$('#sendWhatsZelle'),v=$('#sendWhatsVenmo');if(z)z.onclick=()=>whatsappOrder('Zelle');if(v)v.onclick=()=>whatsappOrder('Venmo')}
 $$('.nav-link').forEach(b=>b.onclick=()=>setCategory(b.dataset.category));$('[data-route]').onclick=e=>{e.preventDefault();setCategory('lancamentos')};$('#searchForm').onsubmit=e=>{e.preventDefault();query=$('#searchInput').value.trim().toLowerCase();page=1;render()};$('#searchMobileBtn').onclick=()=>{const q=prompt('O que você procura?');if(q!==null){query=q.trim().toLowerCase();page=1;render()}};$('#sortSelect').onchange=e=>{sort=e.target.value;page=1;render()};$('#mobileMenuBtn').onclick=()=>$('#mainNav').classList.toggle('open');$('#cartBtn').onclick=()=>{renderCart();openDrawer($('#cartDrawer'))};$('#favoritesBtn').onclick=()=>{renderFavorites();openDrawer($('#favoritesDrawer'))};$$('[data-close]').forEach(b=>b.onclick=closeDrawers);$('#drawerBackdrop').onclick=closeDrawers;
-$('#checkoutBtn').onclick=()=>{if(!cart.length)return alert('Sua sacola está vazia.');renderCheckout();closeDrawers();openDrawer($('#checkoutDrawer'))};$('#stripePay').onclick=()=>showPayment('stripe');$('#zellePay').onclick=()=>showPayment('zelle');$('#venmoPay').onclick=()=>showPayment('venmo');
+$('#checkoutBtn').onclick=()=>{if(!cart.length)return alert('Sua sacola está vazia.');renderCheckout();closeDrawers();openDrawer($('#checkoutDrawer'))};
+async function startStripeCheckout(){
+  if(!cart.length)return alert('Sua sacola está vazia.');
+  const btn=$('#stripePay'),box=$('#paymentInstructions');
+  const original=btn.innerHTML;
+  btn.disabled=true;
+  btn.innerHTML='<strong>Abrindo Stripe…</strong><span>Aguarde um instante</span>';
+  box.hidden=false;
+  box.innerHTML='<strong>Checkout seguro</strong>Estamos preparando seu pedido no Stripe.';
+  try{
+    const items=cart.map(x=>({slug:x.slug,size:x.size,lang:x.lang||'pt',qty:x.qty}));
+    const res=await fetch('https://tjeiyvgyhngztgnxtjaq.supabase.co/functions/v1/jesusfirst-create-checkout',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({items})
+    });
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.url)throw new Error(data.error||'Não foi possível abrir o Stripe Checkout.');
+    window.location.href=data.url;
+  }catch(err){
+    box.hidden=false;
+    box.innerHTML='<strong>Não foi possível abrir o Stripe</strong>'+(err?.message||'Tente novamente em instantes.');
+    btn.disabled=false;
+    btn.innerHTML=original;
+  }
+}
+$('#stripePay').onclick=startStripeCheckout;$('#zellePay').onclick=()=>showPayment('zelle');$('#venmoPay').onclick=()=>showPayment('venmo');
 updateBadges();render();
 })();
 
