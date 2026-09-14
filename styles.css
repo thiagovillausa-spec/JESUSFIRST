@@ -108,3 +108,7 @@ button,input,select{font:inherit}.announcement{background:#111;color:white;text-
 .language-btn.active{background:#111;color:#fff;border-color:#111}
 .language-btn:hover{border-color:#111}
 @media(max-width:620px){.language-btn{flex:1;min-width:0}}
+
+.usa-store-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 13px;border:1px solid #111;background:#111;color:#fff;text-decoration:none;font-size:10px;letter-spacing:.12em;white-space:nowrap}
+.usa-store-link:hover{background:#fff;color:#111}
+@media(max-width:900px){.usa-store-link{min-height:36px;padding:0 8px;font-size:8px;letter-spacing:.08em}}
