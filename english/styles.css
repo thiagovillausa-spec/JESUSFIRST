@@ -27,3 +27,5 @@
 .product-detail-title{font-family:Georgia,serif;font-size:34px;font-weight:400;margin:10px 0}
 .product-detail-desc{font-size:13px;line-height:1.7;color:#666}
 @media(max-width:900px){.product-detail-grid{grid-template-columns:1fr}.detail-image img{height:auto;max-height:70vh}.detail-actions .primary{width:100%}}
+
+.hero-mark strong{font-size:clamp(38px,4.2vw,62px);letter-spacing:.04em;word-break:break-word}.hero-mark small{margin-top:10px;font-size:10px;letter-spacing:.24em;color:#bbb}
