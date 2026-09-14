@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="JESUSFIRST USA — a separate English-first collection with new products for customers in the United States.">
+<title>JESUSFIRST USA</title>
+<link rel="stylesheet" href="styles.css?v=20260914-usa1">
+</head>
+<body>
+<div class="topbar">FREE SHIPPING ON ORDERS OVER $109.90 · SHIPPING ACROSS THE UNITED STATES</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="./">JESUSFIRST <span>USA</span></a>
+    <nav>
+      <a href="#shop">SHOP</a>
+      <a href="#about">ABOUT</a>
+      <a href="../">PORTUGUÊS STORE</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn">BAG <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">A NEW JESUSFIRST STORE</p>
+      <h1>NEW PRODUCTS.<br>BUILT FOR THE U.S.</h1>
+      <p class="hero-text">A separate English-first collection inside JESUSFIRST — different products, different catalog, same secure shopping experience.</p>
+      <a class="primary" href="#shop">EXPLORE THE NEW STORE</a>
+    </div>
+    <div class="hero-card">
+      <span>JESUSFIRST</span>
+      <strong>USA COLLECTION</strong>
+      <small>English-first · USD · Nationwide shipping</small>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div><strong>NEW CATALOG</strong><span>Products separate from the Portuguese store</span></div>
+    <div><strong>ENGLISH FIRST</strong><span>Product pages and checkout flow in English</span></div>
+    <div><strong>USD PAYMENTS</strong><span>Stripe, Zelle and Venmo</span></div>
+    <div><strong>U.S. SHIPPING</strong><span>Nationwide delivery</span></div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">JESUSFIRST USA</p>
+        <h2>New Collection</h2>
+      </div>
+      <div class="tools">
+        <input id="searchInput" type="search" placeholder="Search products">
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="az">Name A–Z</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+    <div id="categoryNav" class="category-nav"></div>
+    <div id="productGrid" class="product-grid"></div>
+    <div id="emptyState" class="empty-state">
+      <strong>The new catalog is ready to be filled.</strong>
+      <span>We are adding the separate U.S. products next.</span>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <p class="eyebrow">ONE BRAND · TWO STORES</p>
+    <h2>A separate collection without mixing catalogs.</h2>
+    <p>The original JESUSFIRST store remains unchanged. This U.S. storefront has its own products and English content while staying inside the same website and brand ecosystem.</p>
+    <a href="../">VISIT THE PORTUGUÊS STORE →</a>
+  </section>
+</main>
+
+<div class="backdrop" id="backdrop" hidden></div>
+
+<aside class="drawer" id="productDrawer" aria-hidden="true">
+  <button class="close" data-close>×</button>
+  <div id="productDetail"></div>
+</aside>
+
+<aside class="drawer small" id="cartDrawer" aria-hidden="true">
+  <button class="close" data-close>×</button>
+  <p class="eyebrow">JESUSFIRST USA</p>
+  <h2>Your Bag</h2>
+  <div id="cartItems"></div>
+  <div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+  <button class="primary full" id="checkoutBtn">SECURE CHECKOUT</button>
+  <p class="note">Stripe checkout will become available as products are added and your Stripe account finishes verification.</p>
+</aside>
+
+<footer>
+  <div class="footer-inner">
+    <div><strong>JESUSFIRST USA</strong><p>Faith-forward shopping for the U.S. market.</p></div>
+    <div><strong>Customer Care</strong><p>WhatsApp: (508) 215-4196<br>Shipping across the United States</p></div>
+    <div><strong>Payments</strong><p>Stripe · Zelle · Venmo<br>Prices in USD</p></div>
+  </div>
+  <div class="copyright">© 2026 JESUSFIRST. All rights reserved.</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/15082154196" target="_blank" rel="noopener" aria-label="Contact JESUSFIRST on WhatsApp">W</a>
+
+<script src="data/products.js?v=20260914-usa1"></script>
+<script src="app.js?v=20260914-usa1"></script>
+</body>
+</html>
