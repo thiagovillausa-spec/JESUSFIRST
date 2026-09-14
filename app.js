@@ -1,6 +1,6 @@
 (()=>{
 const products=window.JF_PRODUCTS||[];const variants=window.JF_VARIANTS||{};let category='lancamentos',query='',sort='featured',selected=null,selectedSize='M',selectedLanguage='pt',page=1;const PAGE_SIZE=40;
-const favs=new Set(JSON.parse(localStorage.getItem('jf-favs')||'[]'));const cart=JSON.parse(localStorage.getItem('jf-cart')||'[]');
+const favs=new Set(JSON.parse(localStorage.getItem('jf-favs')||'[]'));const rawCart=JSON.parse(localStorage.getItem('jf-cart')||'[]');const validSlugs=new Set(products.map(p=>p.slug));const cart=rawCart.filter(x=>validSlugs.has(x.slug)&&Number.isInteger(Number(x.qty))&&Number(x.qty)>0).map(x=>({...x,qty:Number(x.qty)}));if(cart.length!==rawCart.length)localStorage.setItem('jf-cart',JSON.stringify(cart));
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],money=n=>n==null?'Preço em breve':'$'+n.toFixed(2);
 const catName=c=>({lancamentos:'Lançamentos',feminino:'Feminino',oversized:'Oversized',masculino:'Masculino',infantil:'Infantil'}[c]||c);
 const variantFor=(p,lang)=>lang==='en'&&variants[p.slug]?.images?.length?variants[p.slug]:null;
@@ -53,7 +53,8 @@ async function startStripeCheckout(){
   box.hidden=false;
   box.innerHTML='<strong>Checkout seguro</strong>Estamos preparando seu pedido no Stripe.';
   try{
-    const items=cart.map(x=>({slug:x.slug,size:x.size,lang:x.lang||'pt',qty:x.qty}));
+    const items=cart.filter(x=>products.some(p=>p.slug===x.slug)).map(x=>({slug:x.slug,size:x.size,lang:x.lang||'pt',qty:Number(x.qty)||1}));
+    if(!items.length)throw new Error('Sua sacola não contém produtos válidos. Atualize a página e adicione os produtos novamente.');
     const res=await fetch('https://tjeiyvgyhngztgnxtjaq.supabase.co/functions/v1/jesusfirst-create-checkout',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
